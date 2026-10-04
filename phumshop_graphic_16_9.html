@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, height=1080, initial-scale=1.0">
+  <title>PHUMSHOP WEB — 16:9 Graphic Infographic (8K Presentation)</title>
+  
+  <!-- Google Fonts: Prompt & IBM Plex Sans Thai -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 1920px;
+      height: 1080px;
+      margin: 0;
+      padding: 0;
+      background: #060B18;
+      font-family: 'Prompt', sans-serif;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 16:9 Master Poster Canvas */
+    .poster-canvas-169 {
+      width: 1920px;
+      height: 1080px;
+      background: radial-gradient(circle at 50% 0%, #112046 0%, #091329 45%, #050B17 100%);
+      padding: 30px 48px 24px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    /* Background Decors */
+    .bg-grid-169 {
+      position: absolute;
+      top: 30px;
+      right: 60px;
+      width: 180px;
+      height: 180px;
+      background-image: radial-gradient(rgba(99, 102, 241, 0.3) 2px, transparent 2px);
+      background-size: 16px 16px;
+      pointer-events: none;
+    }
+
+    .bg-glow-169 {
+      position: absolute;
+      top: 180px;
+      left: 45%;
+      transform: translateX(-50%);
+      width: 950px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(147, 51, 234, 0.1) 40%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* 1. Header Section (16:9) */
+    .header-169 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    .header-left-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .top-pill {
+      background: rgba(99, 102, 241, 0.15);
+      border: 1.5px solid rgba(129, 140, 248, 0.4);
+      padding: 5px 18px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #E0E7FF;
+      font-size: 13.5px;
+      font-weight: 600;
+      width: fit-content;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+    }
+
+    .top-pill-icon {
+      font-size: 14px;
+    }
+
+    .main-title-169 {
+      font-size: 44px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .main-title-gradient {
+      background: linear-gradient(135deg, #60A5FA 0%, #C084FC 50%, #F472B6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-right-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    .bullets-subline-169 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .bullet-dot {
+      width: 5px;
+      height: 5px;
+      background: #818CF8;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .tech-pill-169 {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1.5px solid rgba(52, 211, 153, 0.4);
+      padding: 5px 16px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #A7F3D0;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+    }
+
+    /* 2. Center Hero (Laptop + Feature Buttons) */
+    .hero-grid-169 {
+      display: grid;
+      grid-template-columns: 1340px 450px;
+      gap: 32px;
+      align-items: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      z-index: 10;
+    }
+
+    /* 3D Laptop */
+    .laptop-wrapper-169 {
+      width: 100%;
+      perspective: 1200px;
+      position: relative;
+    }
+
+    .laptop-body {
+      background: #0D1624;
+      border-radius: 18px 18px 4px 4px;
+      border: 3px solid #334155;
+      padding: 10px 10px 14px 10px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(99, 102, 241, 0.18);
+      position: relative;
+    }
+
+    .camera-dot {
+      width: 6px;
+      height: 6px;
+      background: #475569;
+      border-radius: 50%;
+      margin: 0 auto 6px auto;
+    }
+
+    /* Custom Study Hub & DocHub Dashboard Inside Screen */
+    .dashboard-screen-169 {
+      background: #F8FAFC;
+      border-radius: 10px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      height: 470px;
+      color: #0F172A;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.08);
+    }
+
+    /* Screen Sidebar */
+    .dash-sidebar {
+      background: #0A1224;
+      color: #FFFFFF;
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid #1E293B;
+    }
+
+    .dash-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .dash-logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #2563EB, #9333EA);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(99, 102, 241, 0.4);
+    }
+
+    .dash-brand-title {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+    .dash-brand-sub {
+      font-size: 10px;
+      color: #94A3B8;
+    }
+
+    .dash-menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .dash-menu-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #94A3B8;
+    }
+
+    .dash-menu-item.active {
+      background: linear-gradient(90deg, rgba(99, 102, 241, 0.25) 0%, rgba(147, 51, 234, 0.15) 100%);
+      color: #FFFFFF;
+      border-left: 3px solid #818CF8;
+    }
+
+    .dash-user-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dash-avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3B82F6, #EC4899);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: bold;
+      color: #FFFFFF;
+    }
+
+    .dash-user-name {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+    .dash-user-role {
+      font-size: 9px;
+      color: #60A5FA;
+    }
+
+    /* Screen Main */
+    .dash-main {
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #F8FAFC;
+      overflow: hidden;
+    }
+
+    .dash-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #E2E8F0;
+    }
+
+    .dash-heading-h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #1E293B;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dash-date-badge {
+      font-size: 10px;
+      color: #64748B;
+      font-weight: 500;
+    }
+
+    .dash-status-pill {
+      background: #EDE9FE;
+      border: 1px solid #C4B5FD;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #6D28D9;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Exam Countdown Live Widget Inside Laptop */
+    .dash-countdown-banner {
+      background: linear-gradient(135deg, #4C1D95 0%, #7C3AED 50%, #DB2777 100%);
+      border-radius: 12px;
+      padding: 12px 16px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25);
+    }
+
+    .cd-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cd-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .cd-title {
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .cd-sub {
+      font-size: 9.5px;
+      color: #E9D5FF;
+    }
+    .cd-boxes {
+      display: flex;
+      gap: 6px;
+    }
+    .cd-box {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 4px 8px;
+      border-radius: 6px;
+      text-align: center;
+      min-width: 42px;
+    }
+    .cd-box-num {
+      font-size: 14px;
+      font-weight: 900;
+      color: #FDE047;
+      line-height: 1;
+    }
+    .cd-box-lbl {
+      font-size: 8px;
+      color: #DDD6FE;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* 4 Stat Cards */
+    .dash-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .stat-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .stat-val-text {
+      font-size: 17px;
+      font-weight: 900;
+      color: #0F172A;
+      line-height: 1.1;
+    }
+
+    .stat-lbl-text {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #64748B;
+    }
+
+    .stat-icon-chip {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+    }
+
+    .bg-blue-chip { background: #DBEAFE; color: #1D4ED8; }
+    .bg-emerald-chip { background: #D1FAE5; color: #047857; }
+    .bg-purple-chip { background: #F3E8FF; color: #7E22CE; }
+    .bg-amber-chip { background: #FEF3C7; color: #B45309; }
+
+    /* Split Dashboard Content (Leaderboard + Study ToDo) */
+    .dash-split-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .dash-box-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .dash-box-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: #1E293B;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .dash-table-mini {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.5px;
+    }
+    .dash-table-mini th {
+      color: #64748B;
+      font-weight: 700;
+      text-align: left;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .dash-table-mini td {
+      padding: 5px 0;
+      border-bottom: 1px solid #F8FAFC;
+      color: #334155;
+    }
+
+    .rank-tag {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 9px;
+      color: #FFF;
+      margin-right: 4px;
+    }
+    .rank-1 { background: #F59E0B; }
+    .rank-2 { background: #94A3B8; }
+    .rank-3 { background: #B45309; }
+
+    .todo-mini-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      padding: 4px 6px;
+      background: #F8FAFC;
+      border-radius: 6px;
+      color: #334155;
+      font-weight: 500;
+    }
+
+    .laptop-base {
+      width: 106%;
+      height: 14px;
+      background: linear-gradient(180deg, #64748B 0%, #334155 50%, #1E293B 100%);
+      border-radius: 0 0 16px 16px;
+      margin: 0 -3%;
+      position: relative;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .laptop-notch {
+      width: 140px;
+      height: 5px;
+      background: #0F172A;
+      border-radius: 0 0 6px 6px;
+      margin: 0 auto;
+    }
+
+    /* Right 2-Column Buttons Grid (Feature Highlights) */
+    .feature-buttons-grid-169 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .feature-btn-item {
+      border-radius: 14px;
+      padding: 14px 12px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 13.5px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .btn-icon-sq {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
+      flex-shrink: 0;
+      box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-blue { background: linear-gradient(135deg, rgba(37, 99, 235, 0.95) 0%, rgba(29, 78, 216, 0.85) 100%); }
+    .btn-blue .btn-icon-sq { background: #1D4ED8; }
+
+    .btn-cyan { background: linear-gradient(135deg, rgba(13, 148, 136, 0.95) 0%, rgba(15, 118, 110, 0.85) 100%); }
+    .btn-cyan .btn-icon-sq { background: #0F766E; }
+
+    .btn-purple { background: linear-gradient(135deg, rgba(147, 51, 234, 0.95) 0%, rgba(126, 34, 206, 0.85) 100%); }
+    .btn-purple .btn-icon-sq { background: #7E22CE; }
+
+    .btn-orange { background: linear-gradient(135deg, rgba(234, 88, 12, 0.95) 0%, rgba(194, 65, 12, 0.85) 100%); }
+    .btn-orange .btn-icon-sq { background: #C2410C; }
+
+    .btn-emerald { background: linear-gradient(135deg, rgba(16, 185, 129, 0.95) 0%, rgba(5, 150, 105, 0.85) 100%); }
+    .btn-emerald .btn-icon-sq { background: #059669; }
+
+    .btn-rose { background: linear-gradient(135deg, rgba(225, 29, 72, 0.95) 0%, rgba(190, 18, 60, 0.85) 100%); }
+    .btn-rose .btn-icon-sq { background: #BE123C; }
+
+    /* 3. Bottom 4 Feature Cards (Glassmorphism Container) */
+    .bottom-features-box-169 {
+      background: rgba(15, 23, 42, 0.78);
+      border: 1.5px solid rgba(99, 102, 241, 0.35);
+      border-radius: 20px;
+      padding: 16px 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+      z-index: 10;
+    }
+
+    .bottom-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-circle-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .icon-bg-1 { background: #2563EB; }
+    .icon-bg-2 { background: #0D9488; }
+    .icon-bg-3 { background: #9333EA; }
+    .icon-bg-4 { background: #E11D48; }
+
+    .card-text-wrap h4 {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 2px;
+      line-height: 1.2;
+    }
+
+    .card-text-wrap p {
+      font-size: 11px;
+      color: #94A3B8;
+      line-height: 1.4;
+    }
+
+    /* 4. Footer Bar (16:9) */
+    .footer-bar-169 {
+      background: rgba(10, 18, 36, 0.94);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-logo {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #2563EB, #7C3AED);
+      border-radius: 10px;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+    }
+
+    .footer-college-text {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #E2E8F0;
+    }
+    .footer-club-text {
+      font-size: 11.5px;
+      color: #818CF8;
+      font-weight: 700;
+    }
+
+    .footer-slogan-mid {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #A5B4FC;
+      text-align: center;
+    }
+
+    .footer-qr-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-qr-text {
+      text-align: right;
+    }
+    .qr-text-top {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FDE047;
+    }
+    .qr-text-url {
+      font-family: monospace;
+      font-size: 10.5px;
+      color: #94A3B8;
+    }
+
+    .footer-qr-img {
+      width: 44px;
+      height: 44px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      padding: 2px;
+    }
+    .footer-qr-img img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="poster-canvas-169">
+    
+    <!-- Background Decor -->
+    <div class="bg-grid-169"></div>
+    <div class="bg-glow-169"></div>
+
+    <!-- 1. Header Section -->
+    <header class="header-169">
+      <div class="header-left-group">
+        <div class="top-pill">
+          <span class="top-pill-icon">🎓</span>
+          <span>ระบบคลังเอกสารการเรียนรู้ & โหมดเตรียมสอบอัจฉริยะ</span>
+        </div>
+        <h1 class="main-title-169">
+          PHUMSHOP WEB <span class="main-title-gradient">DocHub & Study Hub</span>
+        </h1>
+      </div>
+
+      <div class="header-right-group">
+        <div class="bullets-subline-169">
+          <span>คลังโฟลเดอร์ Drive</span>
+          <span class="bullet-dot"></span>
+          <span>ค้นหา Multi-Filter</span>
+          <span class="bullet-dot"></span>
+          <span>นับถอยหลังวันสอบสด</span>
+          <span class="bullet-dot"></span>
+          <span>แฟลชการ์ดทบทวน</span>
+        </div>
+        <div class="tech-pill-169">
+          <span>⚡ Web App Script + Google Drive & Sheets API</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. Hero 3D Laptop + Feature Grid -->
+    <section class="hero-grid-169">
+      
+      <!-- 3D Laptop Mockup -->
+      <div class="laptop-wrapper-169">
+        <div class="laptop-body">
+          <div class="camera-dot"></div>
+          
+          <!-- Modern Dashboard Inside Screen -->
+          <div class="dashboard-screen-169">
+            
+            <!-- Sidebar -->
+            <div class="dash-sidebar">
+              <div>
+                <div class="dash-brand">
+                  <div class="dash-logo-icon">📚</div>
+                  <div>
+                    <div class="dash-brand-title">PHUMSHOP WEB</div>
+                    <div class="dash-brand-sub">ศูนย์รวมสรุป & ข้อสอบ</div>
+                  </div>
+                </div>
+
+                <ul class="dash-menu">
+                  <li class="dash-menu-item active">
+                    <span>🏠</span>
+                    <span>หน้าหลัก & ยอดนิยม</span>
+                  </li>
+                  <li class="dash-menu-item">
+                    <span>📁</span>
+                    <span>คลังโฟลเดอร์แยกวิชา</span>
+                  </li>
+                  <li class="dash-menu-item">
+                    <span>🎓</span>
+                    <span>โหมดเตรียมสอบ (Study)</span>
+                  </li>
+                  <li class="dash-menu-item">
+                    <span>⏱️</span>
+                    <span>นับถอยหลังวันสอบ</span>
+                  </li>
+                  <li class="dash-menu-item">
+                    <span>🗂️</span>
+                    <span>แฟลชการ์ด & To-Do</span>
+                  </li>
+                  <li class="dash-menu-item">
+                    <span>📊</span>
+                    <span>Admin Dashboard</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="dash-user-card">
+                <div class="dash-avatar">P</div>
+                <div>
+                  <div class="dash-user-name">นักศึกษา / ผู้ใช้งาน</div>
+                  <div class="dash-user-role">PHUMSHOP Community</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Main Area -->
+            <div class="dash-main">
+              <!-- Top bar -->
+              <div class="dash-topbar">
+                <div>
+                  <h3 class="dash-heading-h3">⚡ Productivity Mode • โหมดเตรียมสอบ & คลังสรุป</h3>
+                  <div class="dash-date-badge">อัปเดตเรียลไทม์ 24 ชม. • เชื่อมต่อ Google Drive อัตโนมัติ</div>
+                </div>
+                <div class="dash-status-pill">
+                  <span>🚀</span>
+                  <span>ระบบออนไลน์พร้อมใช้งาน</span>
+                </div>
+              </div>
+
+              <!-- Exam Countdown Widget Inside Screen -->
+              <div class="dash-countdown-banner">
+                <div class="cd-left">
+                  <div class="cd-icon">⏱️</div>
+                  <div>
+                    <div class="cd-title">นับถอยหลังกำหนดการสอบ (Exam Countdown)</div>
+                    <div class="cd-sub">วิชาชีววิทยา & เคมีอินทรีย์ • เตรียมตัวล่วงหน้า</div>
+                  </div>
+                </div>
+                <div class="cd-boxes">
+                  <div class="cd-box">
+                    <div class="cd-box-num">04</div>
+                    <div class="cd-box-lbl">วัน</div>
+                  </div>
+                  <div class="cd-box">
+                    <div class="cd-box-num">18</div>
+                    <div class="cd-box-lbl">ชม.</div>
+                  </div>
+                  <div class="cd-box">
+                    <div class="cd-box-num">35</div>
+                    <div class="cd-box-lbl">นาที</div>
+                  </div>
+                  <div class="cd-box">
+                    <div class="cd-box-num">12</div>
+                    <div class="cd-box-lbl">วิ.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4 Stat Cards -->
+              <div class="dash-stats-grid">
+                <div class="stat-card">
+                  <div>
+                    <div class="stat-val-text">148+</div>
+                    <div class="stat-lbl-text">เอกสารทั้งหมด</div>
+                  </div>
+                  <div class="stat-icon-chip bg-blue-chip">📄</div>
+                </div>
+
+                <div class="stat-card">
+                  <div>
+                    <div class="stat-val-text">16</div>
+                    <div class="stat-lbl-text">โฟลเดอร์วิชา</div>
+                  </div>
+                  <div class="stat-icon-chip bg-emerald-chip">📁</div>
+                </div>
+
+                <div class="stat-card">
+                  <div>
+                    <div class="stat-val-text">64</div>
+                    <div class="stat-lbl-text">แฟลชการ์ดจำสูตร</div>
+                  </div>
+                  <div class="stat-icon-chip bg-purple-chip">🗂️</div>
+                </div>
+
+                <div class="stat-card">
+                  <div>
+                    <div class="stat-val-text">100%</div>
+                    <div class="stat-lbl-text">ฟรี & โหลดตรง</div>
+                  </div>
+                  <div class="stat-icon-chip bg-amber-chip">⚡</div>
+                </div>
+              </div>
+
+              <!-- Split Content (Leaderboard + Study Planner) -->
+              <div class="dash-split-grid">
+                <div class="dash-box-card">
+                  <div class="dash-box-title">
+                    <span>🏆 อันดับไฟล์ยอดนิยม (Leaderboard)</span>
+                    <span style="font-size: 8.5px; color: #EA580C; background: #FFEDD5; padding: 1px 6px; border-radius: 4px; font-weight: bold;">Top Views</span>
+                  </div>
+                  <table class="dash-table-mini">
+                    <tr>
+                      <th>อันดับ / ชื่อเอกสาร</th>
+                      <th>หมวด</th>
+                      <th>เปิด</th>
+                    </tr>
+                    <tr>
+                      <td><span class="rank-tag rank-1">1</span> สรุปฟิสิกส์ ม.ปลาย สอบเข้า</td>
+                      <td>ฟิสิกส์</td>
+                      <td><b>842</b></td>
+                    </tr>
+                    <tr>
+                      <td><span class="rank-tag rank-2">2</span> แนวข้อสอบเคมีบทคำนวณ</td>
+                      <td>เคมี</td>
+                      <td><b>620</b></td>
+                    </tr>
+                    <tr>
+                      <td><span class="rank-tag rank-3">3</span> สรุปชีววิทยา พันธุศาสตร์</td>
+                      <td>ชีวะ</td>
+                      <td><b>518</b></td>
+                    </tr>
+                  </table>
+                </div>
+
+                <div class="dash-box-card">
+                  <div class="dash-box-title">
+                    <span>✅ สิ่งที่ต้องอ่าน (To-Do)</span>
+                    <span style="font-size: 8.5px; color: #7C3AED; background: #F3E8FF; padding: 1px 6px; border-radius: 4px; font-weight: bold;">เป้าหมาย</span>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <div class="todo-mini-item"><span>☑️</span> ทวนศัพท์อังกฤษ Unit 1-4</div>
+                    <div class="todo-mini-item"><span>☑️</span> ทำแนวข้อสอบชีววิทยา 2 ชุด</div>
+                    <div class="todo-mini-item"><span>⏳</span> ฝึกจำ Flashcards กฎฟิสิกส์</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="laptop-base">
+          <div class="laptop-notch"></div>
+        </div>
+      </div>
+
+      <!-- Right 2-Column Buttons Grid -->
+      <div class="feature-buttons-grid-169">
+        <div class="feature-btn-item btn-blue">
+          <div class="btn-icon-sq">📁</div>
+          <div>คลังโฟลเดอร์แยกวิชา<br><span style="font-size: 11px; font-weight: 500; opacity: 0.9;">ค้นหาง่าย ตรงประเด็น</span></div>
+        </div>
+
+        <div class="feature-btn-item btn-cyan">
+          <div class="btn-icon-sq">🔍</div>
+          <div>ค้นหา Multi-Filter<br><span style="font-size: 11px; font-weight: 500; opacity: 0.9;">กรองประเภท & แท็ก</span></div>
+        </div>
+
+        <div class="feature-btn-item btn-purple">
+          <div class="btn-icon-sq">⏱️</div>
+          <div>นับถอยหลังวันสอบ<br><span style="font-size: 11px; font-weight: 500; opacity: 0.9;">เตือนความเร่งด่วนสด</span></div>
+        </div>
+
+        <div class="feature-btn-item btn-orange">
+          <div class="btn-icon-sq">🏆</div>
+          <div>Leaderboard Top 5<br><span style="font-size: 11px; font-weight: 500; opacity: 0.9;">สถิติไฟล์ยอดนิยม</span></div>
+        </div>
+
+        <div class="feature-btn-item btn-emerald">
+          <div class="btn-icon-sq">🗂️</div>
+          <div>แฟลชการ์ดช่วยจำ<br><span style="font-size: 11px; font-weight: 500; opacity: 0.9;">ทบทวนสูตร & นิยาม</span></div>
+        </div>
+
+        <div class="feature-btn-item btn-rose">
+          <div class="btn-icon-sq">📊</div>
+          <div>Admin Dashboard<br><span style="font-size: 11px; font-weight: 500; opacity: 0.9;">วิเคราะห์สถิติเรียลไทม์</span></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 3. Bottom 4 Feature Cards -->
+    <section class="bottom-features-box-169">
+      
+      <!-- Card 1 -->
+      <div class="bottom-card">
+        <div class="card-circle-icon icon-bg-1">📁</div>
+        <div class="card-text-wrap">
+          <h4>คลังโฟลเดอร์ & Drive Sync</h4>
+          <p>จัดระเบียบไฟล์แยกชั้นโฟลเดอร์ เชื่อมต่อ Google Drive โหลดตรงไฟล์แท้รวดเร็ว</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bottom-card">
+        <div class="card-circle-icon icon-bg-2">🔍</div>
+        <div class="card-text-wrap">
+          <h4>ค้นหา & Multi-Filter Tagging</h4>
+          <p>กรองสรุป แนวข้อสอบ แบบฝึกหัด พร้อมระบบค้นหาอัจฉริยะแบบทันใจ</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bottom-card">
+        <div class="card-circle-icon icon-bg-3">⏱️</div>
+        <div class="card-text-wrap">
+          <h4>Exam Countdown วินาทีสด</h4>
+          <p>นับถอยหลังวันสอบทุกวิชา เตือนระดับด่วน <3 วัน และ <7 วัน ไม่พลาดวันสำคัญ</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bottom-card">
+        <div class="card-circle-icon icon-bg-4">🗂️</div>
+        <div class="card-text-wrap">
+          <h4>Study Hub & Flashcards</h4>
+          <p>พลิกการ์ดทบทวนความรู้ พร้อมระบบ To-Do List จัดตารางอ่านหนังสือครบจบ</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 4. Footer Attribution & QR Scan -->
+    <footer class="footer-bar-169">
+      <div class="footer-left">
+        <div class="footer-logo">
+          🎓
+        </div>
+        <div>
+          <div class="footer-college-text">PHUMSHOP WEB • DocHub & Study Platform</div>
+          <div class="footer-club-text">คลังเอกสาร & ชุมชนแบ่งปันชีทสรุปเพื่อการศึกษา</div>
+        </div>
+      </div>
+
+      <div class="footer-slogan-mid">
+        “ แพลตฟอร์มศูนย์รวมชีทสรุปและเตรียมสอบ ที่เปลี่ยนการอ่านหนังสือให้มีประสิทธิภาพและเข้าถึงได้ทุกคน ”
+      </div>
+
+      <div class="footer-qr-group">
+        <div class="footer-qr-text">
+          <div class="qr-text-top">📲 สแกนเข้าใช้งานเว็บไซต์</div>
+          <div class="qr-text-url">masterphum07-web.github.io/Phumshop02</div>
+        </div>
+        <div class="footer-qr-img">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://masterphum07-web.github.io/Phumshop02/&margin=1" alt="QR Code">
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>
