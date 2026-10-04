@@ -86,22 +86,25 @@ function callAPI(action, payload = {}) {
 // However, the original prompt asked to just use fetch. We'll use GET for reading data to bypass CORS easily if POST fails, or assume the user deployed it with CORS allowed.
 // ใช้ JSONP สำหรับข้อมูลเริ่มต้น เพื่อรองรับ Safari/iPad ที่บล็อก fetch ตอน Apps Script redirect โดเมน
 function fetchInitialData() {
-  return new Promise((resolve, reject) => {
-    const callbackName = '__docHubJsonp_' + Date.now();
-    const script = document.createElement('script');
-    // Google Apps Script อาจใช้เวลาปลุกระบบ 20–30 วินาทีเมื่อไม่มีการเรียกใช้งานนาน ๆ
-    // จึงต้องเผื่อเวลาให้มากกว่า timeout เดิม ไม่อย่างนั้นจะฟ้องว่าเชื่อมต่อไม่ได้ทั้งที่ API ยังทำงานปกติ
-    const timer = setTimeout(() => { cleanup(); reject(new Error('JSONP timeout')); }, 45000);
-    function cleanup() {
-      clearTimeout(timer);
-      delete window[callbackName];
-      if(script.parentNode) script.parentNode.removeChild(script);
-    }
-    window[callbackName] = result => { cleanup(); resolve(result); };
-    script.onerror = () => { cleanup(); reject(new Error('JSONP request failed')); };
-    script.src = API_URL + '?action=getInitialData&callback=' + callbackName + '&_=' + Date.now();
-    document.head.appendChild(script);
-  });
+  const query = API_URL + '?action=getInitialData&_=' + Date.now();
+  // เรียกแบบ CORS ก่อน: Chrome บางโปรไฟล์/ส่วนเสริมบล็อก JSONP แต่ API รองรับ CORS อยู่แล้ว
+  return fetchWithTimeout(query, 45000, { method: 'GET', mode: 'cors', cache: 'no-store' })
+    .then(r => { if(!r.ok) throw new Error('API HTTP ' + r.status); return r.json(); })
+    .catch(() => new Promise((resolve, reject) => {
+      // fallback สำหรับเบราว์เซอร์ที่อ่าน CORS ไม่ได้
+      const callbackName = '__docHubJsonp_' + Date.now();
+      const script = document.createElement('script');
+      const timer = setTimeout(() => { cleanup(); reject(new Error('JSONP timeout')); }, 45000);
+      function cleanup() {
+        clearTimeout(timer);
+        delete window[callbackName];
+        if(script.parentNode) script.parentNode.removeChild(script);
+      }
+      window[callbackName] = result => { cleanup(); resolve(result); };
+      script.onerror = () => { cleanup(); reject(new Error('JSONP request failed')); };
+      script.src = API_URL + '?action=getInitialData&callback=' + callbackName + '&_=' + Date.now();
+      document.head.appendChild(script);
+    }));
 }
 
 function fetchWithTimeout(url, timeoutMs = 12000, options = {}) {
