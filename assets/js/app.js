@@ -89,7 +89,9 @@ function fetchInitialData() {
   return new Promise((resolve, reject) => {
     const callbackName = '__docHubJsonp_' + Date.now();
     const script = document.createElement('script');
-    const timer = setTimeout(() => { cleanup(); reject(new Error('JSONP timeout')); }, 15000);
+    // Google Apps Script อาจใช้เวลาปลุกระบบ 20–30 วินาทีเมื่อไม่มีการเรียกใช้งานนาน ๆ
+    // จึงต้องเผื่อเวลาให้มากกว่า timeout เดิม ไม่อย่างนั้นจะฟ้องว่าเชื่อมต่อไม่ได้ทั้งที่ API ยังทำงานปกติ
+    const timer = setTimeout(() => { cleanup(); reject(new Error('JSONP timeout')); }, 45000);
     function cleanup() {
       clearTimeout(timer);
       delete window[callbackName];
@@ -661,7 +663,7 @@ function openDocMenu(docId) {
   });
 }
 
-function fetchJsonp(action, params = {}, timeoutMs = 12000) {
+function fetchJsonp(action, params = {}, timeoutMs = 30000) {
   return new Promise((resolve, reject) => {
     const callbackName = '__docHubJsonp_' + Date.now() + '_' + Math.random().toString(36).slice(2);
     const query = new URLSearchParams({ action, ...params, callback: callbackName, _: Date.now() });
